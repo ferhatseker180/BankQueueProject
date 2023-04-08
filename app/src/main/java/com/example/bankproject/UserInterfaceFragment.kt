@@ -1,13 +1,17 @@
 package com.example.bankproject
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.fragment_user_interface.view.*
 
 
@@ -30,12 +34,39 @@ class UserInterfaceFragment : Fragment() {
         }
 
         val refMusteriler = database.getReference("musteriler")
-
         //  val musteri1 = Musteriler("Mehmet Karaca","kullanici@gmail.com",12345678998,1,1)
         //  refMusteriler.push().setValue(musteri1)
 
-        //  val musteri2 = Musteriler("Ahmet Kibar","kullanici2@gmail.com",14725836998,1,2)
-        //  refMusteriler.push().setValue(musteri2)
+        val sorgu = refMusteriler.orderByChild("tc_no").equalTo("12345678998")
+
+
+        tasarim.buttonOnayla.setOnClickListener {
+            sorgu.addValueEventListener(object : ValueEventListener {
+
+                override fun onDataChange(snapshot: DataSnapshot) {
+
+                    for (postSnapshot in snapshot.children ) {
+                        val musteri = postSnapshot.getValue(Musteriler::class.java)
+                        if (musteri != null) {
+                        //    if (tcKimlik.toString() == musteri.tc_no.toString()) {
+                                val key = postSnapshot.key
+                                Log.e("key",key.toString())
+                                Log.e("Kişi Ad",musteri.ad_soyad.toString())
+                        //    }
+
+                        }
+                    }
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                    Log.e("HATA",error.toException().toString())
+                }
+
+            })
+        }
+
+
+
 
         return tasarim
     }

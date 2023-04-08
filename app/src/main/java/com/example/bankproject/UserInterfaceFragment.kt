@@ -24,6 +24,7 @@ class UserInterfaceFragment : Fragment() {
 
         auth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance()
+        val email = auth.currentUser?.email.toString()
 
         val tcKimlik = tasarim.editTextTcKimlik.text.toString().trim()
         val giseNo = tasarim.editTextGiseNumarasi.text.toString().trim()
@@ -39,6 +40,7 @@ class UserInterfaceFragment : Fragment() {
         //  refMusteriler.push().setValue(musteri1)
 
         val sorgu = refMusteriler.orderByChild("sira_no").limitToLast(1)
+        val sorgu2 = refMusteriler.orderByChild("gmail").equalTo("${email}")
 
 
         tasarim.buttonOnayla.setOnClickListener {
@@ -78,6 +80,32 @@ class UserInterfaceFragment : Fragment() {
             })
         }
 
+        tasarim.buttonOnayla.setOnClickListener {
+            sorgu2.addValueEventListener(object : ValueEventListener{
+                override fun onDataChange(snapshot: DataSnapshot) {
+
+                    for (s in snapshot.children) {
+                        val musteri = s.getValue(Musteriler::class.java)
+                        val tc = tasarim.editTextTcKimlik.text.toString()
+                        val giseNumarasi = editTextGiseNumarasi.text.toString()
+                        val siraNumarasi = editTextSiraNo.text.toString()
+                        if (s != null ) {
+                            val keyy = s.key
+                            if (musteri?.tc_no.toString() == tc && giseNumarasi.toString()==musteri?.gise_no.toString()) {
+                                tasarim.textViewAdSoyad.text = musteri?.ad_soyad.toString()
+                                tasarim.textViewTcKimlik.text = musteri?.tc_no.toString()
+                            }
+
+                        }
+                    }
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+
+                }
+
+            })
+        }
 
 
 

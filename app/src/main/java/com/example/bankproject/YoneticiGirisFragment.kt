@@ -9,6 +9,8 @@ import android.view.ViewGroup
 class YoneticiGirisFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
        val tasarim = inflater.inflate(R.layout.fragment_yonetici_giris, container, false)
+
+
         return tasarim
     }
 

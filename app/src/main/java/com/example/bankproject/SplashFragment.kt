@@ -5,10 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import androidx.navigation.Navigation
 import com.google.firebase.auth.FirebaseAuth
-import kotlinx.android.synthetic.main.fragment_splash.*
 import kotlinx.android.synthetic.main.fragment_splash.view.*
 
 class SplashFragment : Fragment() {
@@ -20,7 +18,7 @@ class SplashFragment : Fragment() {
 
         val guncelKullanici = auth.currentUser
 
-       tasarim.buttonAnaGiris.setOnClickListener {
+       tasarim.buttonAnaKullaniciGiris.setOnClickListener {
            if (guncelKullanici != null) {
                Navigation.findNavController(it).navigate(R.id.action_splashFragment_to_userInterfaceFragment4)
            } else {
@@ -29,6 +27,14 @@ class SplashFragment : Fragment() {
            }
        }
 
+        tasarim.buttonYoneticiAnaGiris.setOnClickListener {
+            if (guncelKullanici != null) {
+                Navigation.findNavController(it).navigate(R.id.action_splashFragment_to_siraKayitFragment)
+            }
+            else {
+                Navigation.findNavController(it).navigate(R.id.action_splashFragment_to_yoneticiGirisFragment)
+            }
+        }
 
         return tasarim
     }

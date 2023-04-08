@@ -12,6 +12,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import kotlinx.android.synthetic.main.fragment_user_interface.*
 import kotlinx.android.synthetic.main.fragment_user_interface.view.*
 
 
@@ -37,7 +38,7 @@ class UserInterfaceFragment : Fragment() {
         //  val musteri1 = Musteriler("Mehmet Karaca","kullanici@gmail.com",12345678998,1,1)
         //  refMusteriler.push().setValue(musteri1)
 
-        val sorgu = refMusteriler.orderByChild("tc_no").equalTo("12345678998")
+        val sorgu = refMusteriler.orderByChild("sira_no").limitToLast(1)
 
 
         tasarim.buttonOnayla.setOnClickListener {
@@ -47,11 +48,23 @@ class UserInterfaceFragment : Fragment() {
 
                     for (postSnapshot in snapshot.children ) {
                         val musteri = postSnapshot.getValue(Musteriler::class.java)
-                        if (musteri != null) {
+                        val tc = tasarim.editTextTcKimlik.text.toString()
+                        val tcNumarasi = musteri?.tc_no.toString()
+                        val giseNumarasi = editTextGiseNumarasi.text.toString()
+                        val gise2Numarasi = musteri?.gise_no.toString()
+
+                        if (musteri != null && tc == tcNumarasi) {
                         //    if (tcKimlik.toString() == musteri.tc_no.toString()) {
                                 val key = postSnapshot.key
                                 Log.e("key",key.toString())
-                                Log.e("Kişi Ad",musteri.ad_soyad.toString())
+                            tasarim.textViewAdSoyad.text = musteri.ad_soyad
+                            tasarim.textViewGmail.text = musteri.gmail
+                            tasarim.textViewTcKimlik.text = musteri.tc_no.toString()
+                            tasarim.textViewGiseNo.text = musteri.gise_no.toString()
+                            tasarim.textViewSiraNo.text = musteri.sira_no.toString()
+                    //       var kalan = tasarim.textViewSiraNo.toString().toInt() - musteri.sira_no!!.toInt()
+                     //       tasarim.textViewKalanKisi.text = kalan.toString()
+
                         //    }
 
                         }

@@ -15,24 +15,37 @@
         android:layout_marginBottom="20dp"
         android:scaleType="centerInside"
         android:src="@drawable/welcome_animation"
-        app:layout_constraintBottom_toTopOf="@+id/buttonAnaGiris"
+        app:layout_constraintBottom_toTopOf="@+id/buttonAnaKullaniciGiris"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/buttonAnaGiris"
-        android:layout_width="299dp"
-        android:layout_height="69dp"
-        android:layout_marginBottom="10dp"
-        android:text="GİRİŞ"
-        android:textSize="34sp"
+        android:id="@+id/buttonAnaKullaniciGiris"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:text="KULLANICI GİRİŞ"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonYoneticiAnaGiris"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/buttonYoneticiAnaGiris"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:text="YÖNETİCİ GİRİŞ"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/buttonAnaKullaniciGiris" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

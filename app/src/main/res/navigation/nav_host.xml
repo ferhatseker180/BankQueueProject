@@ -16,6 +16,12 @@
         <action
             android:id="@+id/action_splashFragment_to_userInterfaceFragment4"
             app:destination="@id/userInterfaceFragment" />
+        <action
+            android:id="@+id/action_splashFragment_to_yoneticiGirisFragment"
+            app:destination="@id/yoneticiGirisFragment" />
+        <action
+            android:id="@+id/action_splashFragment_to_siraKayitFragment"
+            app:destination="@id/siraKayitFragment" />
     </fragment>
     <fragment
         android:id="@+id/userLoginFragment"
@@ -51,6 +57,26 @@
             android:id="@+id/action_userCreateFragment_to_userLoginFragment"
             app:destination="@id/userLoginFragment"
             app:popUpTo="@id/userCreateFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/yoneticiGirisFragment"
+        android:name="com.example.bankproject.YoneticiGirisFragment"
+        android:label="fragment_yonetici_giris"
+        tools:layout="@layout/fragment_yonetici_giris" >
+        <action
+            android:id="@+id/action_yoneticiGirisFragment_to_siraKayitFragment"
+            app:destination="@id/siraKayitFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/siraKayitFragment"
+        android:name="com.example.bankproject.SiraKayitFragment"
+        android:label="fragment_sira_kayit"
+        tools:layout="@layout/fragment_sira_kayit" >
+        <action
+            android:id="@+id/action_siraKayitFragment_to_yoneticiGirisFragment"
+            app:destination="@id/yoneticiGirisFragment"
+            app:popUpTo="@id/siraKayitFragment"
             app:popUpToInclusive="true" />
     </fragment>
 </navigation>

@@ -38,6 +38,7 @@
                 android:id="@+id/exitButton"
                 android:layout_width="31dp"
                 android:layout_height="29dp"
+                android:layout_marginEnd="5dp"
                 android:background="#FFFFFF"
                 android:src="@drawable/exit"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -108,6 +109,7 @@
         android:id="@+id/textViewAdSoyad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:text="Ad Soyad :"
         android:textColor="#101010"
         android:textSize="20sp"
@@ -116,7 +118,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout5" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonOnayla" />
 
     <TextView
         android:id="@+id/textViewGmail"
@@ -187,4 +189,17 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewSiraNo" />
+
+    <Button
+        android:id="@+id/buttonOnayla"
+        android:layout_width="167dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#039BE5"
+        android:text="ONAYLA"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout5" />
 </androidx.constraintlayout.widget.ConstraintLayout>

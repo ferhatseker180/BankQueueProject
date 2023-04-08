@@ -24,7 +24,9 @@
         tools:layout="@layout/fragment_user_login" >
         <action
             android:id="@+id/action_userLoginFragment_to_userInterfaceFragment"
-            app:destination="@id/userInterfaceFragment" />
+            app:destination="@id/userInterfaceFragment"
+            app:popUpTo="@id/userLoginFragment"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_userLoginFragment_to_userCreateFragment"
             app:destination="@id/userCreateFragment" />
@@ -33,10 +35,22 @@
         android:id="@+id/userInterfaceFragment"
         android:name="com.example.bankproject.UserInterfaceFragment"
         android:label="fragment_user_interface"
-        tools:layout="@layout/fragment_user_interface" />
+        tools:layout="@layout/fragment_user_interface" >
+        <action
+            android:id="@+id/action_userInterfaceFragment_to_userLoginFragment"
+            app:destination="@id/userLoginFragment"
+            app:popUpTo="@id/userInterfaceFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
     <fragment
         android:id="@+id/userCreateFragment"
         android:name="com.example.bankproject.UserCreateFragment"
         android:label="fragment_user_create"
-        tools:layout="@layout/fragment_user_create" />
+        tools:layout="@layout/fragment_user_create" >
+        <action
+            android:id="@+id/action_userCreateFragment_to_userLoginFragment"
+            app:destination="@id/userLoginFragment"
+            app:popUpTo="@id/userCreateFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
 </navigation>

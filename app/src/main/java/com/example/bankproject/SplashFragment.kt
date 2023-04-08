@@ -7,16 +7,26 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.navigation.Navigation
-import com.bumptech.glide.Glide
+import com.google.firebase.auth.FirebaseAuth
+import kotlinx.android.synthetic.main.fragment_splash.*
 import kotlinx.android.synthetic.main.fragment_splash.view.*
 
 class SplashFragment : Fragment() {
 
+    private lateinit var auth : FirebaseAuth
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val tasarim = inflater.inflate(R.layout.fragment_splash, container, false)
+        auth = FirebaseAuth.getInstance()
+
+        val guncelKullanici = auth.currentUser
 
        tasarim.buttonAnaGiris.setOnClickListener {
-           Navigation.findNavController(it).navigate(R.id.action_splashFragment_to_userLoginFragment)
+           if (guncelKullanici != null) {
+               Navigation.findNavController(it).navigate(R.id.action_splashFragment_to_userInterfaceFragment4)
+           } else {
+               Navigation.findNavController(it).navigate(R.id.action_splashFragment_to_userLoginFragment)
+
+           }
        }
 
 

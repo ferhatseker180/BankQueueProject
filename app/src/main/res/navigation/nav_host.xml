@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_host"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.bankproject.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_userLoginFragment"
+            app:destination="@id/userLoginFragment" />
+        <action
+            android:id="@+id/action_splashFragment_to_userInterfaceFragment4"
+            app:destination="@id/userInterfaceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userLoginFragment"
+        android:name="com.example.bankproject.UserLoginFragment"
+        android:label="fragment_user_login"
+        tools:layout="@layout/fragment_user_login" >
+        <action
+            android:id="@+id/action_userLoginFragment_to_userInterfaceFragment"
+            app:destination="@id/userInterfaceFragment" />
+        <action
+            android:id="@+id/action_userLoginFragment_to_userCreateFragment"
+            app:destination="@id/userCreateFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userInterfaceFragment"
+        android:name="com.example.bankproject.UserInterfaceFragment"
+        android:label="fragment_user_interface"
+        tools:layout="@layout/fragment_user_interface" />
+    <fragment
+        android:id="@+id/userCreateFragment"
+        android:name="com.example.bankproject.UserCreateFragment"
+        android:label="fragment_user_create"
+        tools:layout="@layout/fragment_user_create" />
+</navigation>

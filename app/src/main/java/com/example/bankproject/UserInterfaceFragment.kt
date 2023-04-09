@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.Navigation
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
@@ -65,13 +66,19 @@ class UserInterfaceFragment : Fragment() {
                                 sorgu.addValueEventListener(object : ValueEventListener {
                                     override fun onDataChange(snapshot: DataSnapshot) {
                                         for (postSnapshot in snapshot.children ) {
-                                            val musteri = postSnapshot.getValue(Musteriler::class.java)
+                                            val musterii = postSnapshot.getValue(Musteriler::class.java)
                                             if (postSnapshot != null) {
                                                 val key = postSnapshot.key
                                                 Log.e("key",key.toString())
-                                                tasarim.textViewMevcutSiraNo.text = "İşlem Yapan Kişinin Sıra Numarası : ${musteri?.sira_no.toString()} "
-
+                                                tasarim.textViewMevcutSiraNo.text = "İşlem Yapan Kişinin Sıra Numarası : ${musterii?.sira_no.toString()} "
                                             }
+                                         //   if (musteri?.sira_no.toString().toInt() < musterii?.sira_no.toString().toInt()) {
+                                         //       Toast.makeText(activity,"Sıra Numaranız Geçmiştir",Toast.LENGTH_SHORT).show()
+                                         //   } else {
+                                         //       hesapla(musteri?.sira_no.toString().toInt(),musterii?.sira_no.toString().toInt())
+                                         //   }
+                                            hesapla(musteri?.sira_no.toString().toInt(),musterii?.sira_no.toString().toInt())
+
                                         }
 
                                     }
@@ -100,4 +107,14 @@ class UserInterfaceFragment : Fragment() {
         return tasarim
     }
 
+    fun hesapla(siraNumaran : Int,mevcutSira : Int) {
+
+        if (siraNumaran>mevcutSira) {
+            var kalan = siraNumaran - mevcutSira
+            textViewKalanKisi.text = kalan.toString()
+        } else {
+            textViewKalanKisi.text = "Sıra Numaranız Geçmiştir, İlgili Birimle İletişime Geçiniz"
+        }
+
+    }
 }

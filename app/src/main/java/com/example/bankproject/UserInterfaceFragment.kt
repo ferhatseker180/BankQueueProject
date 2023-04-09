@@ -44,43 +44,6 @@ class UserInterfaceFragment : Fragment() {
 
 
         tasarim.buttonOnayla.setOnClickListener {
-            sorgu.addValueEventListener(object : ValueEventListener {
-
-                override fun onDataChange(snapshot: DataSnapshot) {
-
-                    for (postSnapshot in snapshot.children ) {
-                        val musteri = postSnapshot.getValue(Musteriler::class.java)
-                        val tc = tasarim.editTextTcKimlik.text.toString()
-                        val tcNumarasi = musteri?.tc_no.toString()
-                        val giseNumarasi = editTextGiseNumarasi.text.toString()
-                        val gise2Numarasi = musteri?.gise_no.toString()
-
-                        if (musteri != null && tc == tcNumarasi) {
-                        //    if (tcKimlik.toString() == musteri.tc_no.toString()) {
-                                val key = postSnapshot.key
-                                Log.e("key",key.toString())
-                            tasarim.textViewAdSoyad.text = musteri.ad_soyad
-                            tasarim.textViewGmail.text = musteri.gmail
-                            tasarim.textViewTcKimlik.text = musteri.tc_no.toString()
-                            tasarim.textViewGiseNo.text = musteri.gise_no.toString()
-                            tasarim.textViewSiraNo.text = musteri.sira_no.toString()
-                    //       var kalan = tasarim.textViewSiraNo.toString().toInt() - musteri.sira_no!!.toInt()
-                     //       tasarim.textViewKalanKisi.text = kalan.toString()
-
-                        //    }
-
-                        }
-                    }
-                }
-
-                override fun onCancelled(error: DatabaseError) {
-                    Log.e("HATA",error.toException().toString())
-                }
-
-            })
-        }
-
-        tasarim.buttonOnayla.setOnClickListener {
             sorgu2.addValueEventListener(object : ValueEventListener{
                 override fun onDataChange(snapshot: DataSnapshot) {
 
@@ -92,8 +55,33 @@ class UserInterfaceFragment : Fragment() {
                         if (s != null ) {
                             val keyy = s.key
                             if (musteri?.tc_no.toString() == tc && giseNumarasi.toString()==musteri?.gise_no.toString()) {
-                                tasarim.textViewAdSoyad.text = musteri?.ad_soyad.toString()
-                                tasarim.textViewTcKimlik.text = musteri?.tc_no.toString()
+                                tasarim.textViewAdSoyad.text = "Adınız Soyadınız : ${musteri?.ad_soyad.toString()}"
+                                tasarim.textViewTcKimlik.text = "TC Kimlik Numaranız : ${musteri?.tc_no.toString()}"
+                                tasarim.textViewGmail.text = "Gmail Adresiniz : ${musteri?.gmail.toString()}"
+                                tasarim.textViewGiseNo.text = "Gişe Numaranız : ${musteri?.gise_no.toString()}"
+                                tasarim.textViewSiraNo.text = "Sıra Numaranız : ${musteri?.sira_no.toString()}"
+                                refMusteriler.orderByChild("sira_no").limitToLast(1)
+
+                                sorgu.addValueEventListener(object : ValueEventListener {
+                                    override fun onDataChange(snapshot: DataSnapshot) {
+                                        for (postSnapshot in snapshot.children ) {
+                                            val musteri = postSnapshot.getValue(Musteriler::class.java)
+                                            if (postSnapshot != null) {
+                                                val key = postSnapshot.key
+                                                Log.e("key",key.toString())
+                                                tasarim.textViewMevcutSiraNo.text = "İşlem Yapan Kişinin Sıra Numarası : ${musteri?.sira_no.toString()} "
+
+                                            }
+                                        }
+
+                                    }
+
+                                    override fun onCancelled(error: DatabaseError) {
+
+
+                                    }
+
+                                })
                             }
 
                         }
@@ -101,7 +89,7 @@ class UserInterfaceFragment : Fragment() {
                 }
 
                 override fun onCancelled(error: DatabaseError) {
-
+                    Log.e("HATA",error.toException().toString())
                 }
 
             })

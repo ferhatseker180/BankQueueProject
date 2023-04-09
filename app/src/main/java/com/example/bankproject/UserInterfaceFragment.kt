@@ -37,15 +37,11 @@ class UserInterfaceFragment : Fragment() {
         }
 
         val refMusteriler = database.getReference("musteriler")
-        //  val musteri1 = Musteriler("Mehmet Karaca","kullanici@gmail.com",12345678998,1,1)
-        //  refMusteriler.push().setValue(musteri1)
 
-        val sorgu = refMusteriler.orderByChild("sira_no").limitToLast(1)
-        val sorgu2 = refMusteriler.orderByChild("gmail").equalTo("${email}")
-
+        val sorgu = refMusteriler.orderByChild("gmail").equalTo("${email}")
 
         tasarim.buttonOnayla.setOnClickListener {
-            sorgu2.addValueEventListener(object : ValueEventListener{
+            sorgu.addValueEventListener(object : ValueEventListener{
                 override fun onDataChange(snapshot: DataSnapshot) {
 
                     for (s in snapshot.children) {
@@ -61,23 +57,21 @@ class UserInterfaceFragment : Fragment() {
                                 tasarim.textViewGmail.text = "Gmail Adresiniz : ${musteri?.gmail.toString()}"
                                 tasarim.textViewGiseNo.text = "Gişe Numaranız : ${musteri?.gise_no.toString()}"
                                 tasarim.textViewSiraNo.text = "Sıra Numaranız : ${musteri?.sira_no.toString()}"
-                                refMusteriler.orderByChild("sira_no").limitToLast(1)
 
-                                sorgu.addValueEventListener(object : ValueEventListener {
+                                val gise = tasarim.editTextGiseNumarasi.text.toString().trim()
+                                val sorgu2 = refMusteriler.orderByChild("gise_no").equalTo("${gise}")
+
+                                sorgu2.addValueEventListener(object : ValueEventListener {
                                     override fun onDataChange(snapshot: DataSnapshot) {
                                         for (postSnapshot in snapshot.children ) {
                                             val musterii = postSnapshot.getValue(Musteriler::class.java)
                                             if (postSnapshot != null) {
                                                 val key = postSnapshot.key
                                                 Log.e("key",key.toString())
-                                                tasarim.textViewMevcutSiraNo.text = "İşlem Yapan Kişinin Sıra Numarası : ${musterii?.sira_no.toString()} "
+                                                    tasarim.textViewMevcutSiraNo.text = "İşlem Yapan Kişinin Sıra Numarası : ${musterii?.sira_no.toString()} "
+                                                    hesapla(musteri?.sira_no.toString().toInt(),musterii?.sira_no.toString().toInt())
                                             }
-                                         //   if (musteri?.sira_no.toString().toInt() < musterii?.sira_no.toString().toInt()) {
-                                         //       Toast.makeText(activity,"Sıra Numaranız Geçmiştir",Toast.LENGTH_SHORT).show()
-                                         //   } else {
-                                         //       hesapla(musteri?.sira_no.toString().toInt(),musterii?.sira_no.toString().toInt())
-                                         //   }
-                                            hesapla(musteri?.sira_no.toString().toInt(),musterii?.sira_no.toString().toInt())
+
 
                                         }
 
@@ -103,8 +97,8 @@ class UserInterfaceFragment : Fragment() {
         }
 
 
-
         return tasarim
+
     }
 
     fun hesapla(siraNumaran : Int,mevcutSira : Int) {
@@ -112,8 +106,11 @@ class UserInterfaceFragment : Fragment() {
         if (siraNumaran>mevcutSira) {
             var kalan = siraNumaran - mevcutSira
             textViewKalanKisi.text = kalan.toString()
-        } else {
+        } else if (siraNumaran < mevcutSira) {
             textViewKalanKisi.text = "Sıra Numaranız Geçmiştir, İlgili Birimle İletişime Geçiniz"
+        }
+        else {
+            textViewKalanKisi.text = "Şu An Sizin Sıranız..."
         }
 
     }

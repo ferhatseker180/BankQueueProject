@@ -57,7 +57,7 @@ class SiraKayitFragment : Fragment() {
                         val musteriler = kayit.getValue(MusteriKayit::class.java)
                         if (kayit!= null) {
                             val key = kayit.key
-                            tasarim.textViewGelenMusteriBilgi.text = "Müşterinin Adı Soyadı : ${musteriler?.ad_soyad} \n TC Kimlik Numarası : ${musteriler?.tc_no} \n Gişe Numarası : ${musteriler?.gise_no} \n Sıra Numarası : ${musteriler?.sira_no}"
+                            tasarim.textViewGelenMusteriBilgi.text = "Müşterinin Adı Soyadı : ${musteriler?.ad_soyad} \n Gmail Adresi : ${musteriler?.gmail} \n TC Kimlik Numarası : ${musteriler?.tc_no} \n Gişe Numarası : ${musteriler?.gise_no} \n Sıra Numarası : ${musteriler?.sira_no}"
 
 
                         }

@@ -22,6 +22,9 @@
         <action
             android:id="@+id/action_splashFragment_to_siraKayitFragment"
             app:destination="@id/siraKayitFragment" />
+        <action
+            android:id="@+id/action_splashFragment_to_anaSiraOlusturmaFragment"
+            app:destination="@id/anaSiraOlusturmaFragment" />
     </fragment>
     <fragment
         android:id="@+id/userLoginFragment"
@@ -78,5 +81,14 @@
             app:destination="@id/yoneticiGirisFragment"
             app:popUpTo="@id/siraKayitFragment"
             app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/anaSiraOlusturmaFragment"
+        android:name="com.example.bankproject.AnaSiraOlusturmaFragment"
+        android:label="fragment_ana_sira_olusturma"
+        tools:layout="@layout/fragment_ana_sira_olusturma" >
+        <action
+            android:id="@+id/action_anaSiraOlusturmaFragment_to_userLoginFragment"
+            app:destination="@id/userLoginFragment" />
     </fragment>
 </navigation>

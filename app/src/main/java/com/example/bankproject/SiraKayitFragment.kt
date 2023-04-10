@@ -8,7 +8,10 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import androidx.navigation.Navigation
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.fragment_sira_kayit.*
 import kotlinx.android.synthetic.main.fragment_sira_kayit.view.*
 
@@ -16,12 +19,13 @@ import kotlinx.android.synthetic.main.fragment_sira_kayit.view.*
 class SiraKayitFragment : Fragment() {
     private lateinit var auth : FirebaseAuth
     private lateinit var database: FirebaseDatabase
+    var limit = 1
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
        val tasarim = inflater.inflate(R.layout.fragment_sira_kayit, container, false)
 
         auth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance()
-
 
 
         tasarim.exitButtonYonetici.setOnClickListener {
@@ -41,7 +45,31 @@ class SiraKayitFragment : Fragment() {
             val musteri3 = Musteriler(ad_soyad,gmail,tc_no, gise_no,sira_no)
             refMusteriler.push().setValue(musteri3)
 
+        }
 
+        tasarim.buttonVerileriAl.setOnClickListener {
+            val refMusteriler = database.getReference("ilk_kayit")
+
+              val sorgu = refMusteriler.orderByChild("gise_no").limitToFirst(limit++)
+            sorgu.addValueEventListener(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    for (kayit in snapshot.children) {
+                        val musteriler = kayit.getValue(MusteriKayit::class.java)
+                        if (kayit!= null) {
+                            val key = kayit.key
+                            tasarim.textViewGelenMusteriBilgi.text = "Müşterinin Adı Soyadı : ${musteriler?.ad_soyad} \n TC Kimlik Numarası : ${musteriler?.tc_no} \n Gişe Numarası : ${musteriler?.gise_no} \n Sıra Numarası : ${musteriler?.sira_no}"
+
+
+                        }
+                    }
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+
+
+                }
+
+            })
         }
 
 

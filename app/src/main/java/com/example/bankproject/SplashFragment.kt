@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
 import com.google.firebase.auth.FirebaseAuth
+import kotlinx.android.synthetic.main.fragment_ana_sira_olusturma.view.*
 import kotlinx.android.synthetic.main.fragment_splash.view.*
 
 class SplashFragment : Fragment() {
@@ -17,6 +18,10 @@ class SplashFragment : Fragment() {
         auth = FirebaseAuth.getInstance()
 
         val guncelKullanici = auth.currentUser
+
+        tasarim.buttonSıraAlmayaGit.setOnClickListener {
+            Navigation.findNavController(it).navigate(R.id.action_splashFragment_to_anaSiraOlusturmaFragment)
+        }
 
        tasarim.buttonAnaKullaniciGiris.setOnClickListener {
            if (guncelKullanici != null) {
@@ -35,6 +40,8 @@ class SplashFragment : Fragment() {
                 Navigation.findNavController(it).navigate(R.id.action_splashFragment_to_yoneticiGirisFragment)
             }
         }
+
+
 
         return tasarim
     }

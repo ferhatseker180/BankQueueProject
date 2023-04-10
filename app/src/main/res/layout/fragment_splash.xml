@@ -12,7 +12,7 @@
         android:id="@+id/gifImageView"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="5dp"
         android:scaleType="centerInside"
         android:src="@drawable/welcome_animation"
         app:layout_constraintBottom_toTopOf="@+id/buttonAnaKullaniciGiris"
@@ -25,7 +25,7 @@
         android:id="@+id/buttonAnaKullaniciGiris"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="80dp"
         android:text="KULLANICI GİRİŞ"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -38,7 +38,7 @@
         android:id="@+id/buttonYoneticiAnaGiris"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="80dp"
         android:text="YÖNETİCİ GİRİŞ"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -46,6 +46,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/buttonAnaKullaniciGiris" />
+
+    <Button
+        android:id="@+id/buttonSıraAlmayaGit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="SIRA AL"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -36,53 +36,46 @@ class UserInterfaceFragment : Fragment() {
             Navigation.findNavController(it).navigate(R.id.action_userInterfaceFragment_to_userLoginFragment)
         }
 
-        val refMusteriler = database.getReference("musteriler")
-
-        val sorgu = refMusteriler.orderByChild("gmail").equalTo("${email}")
+     //   val refMusteriler = database.getReference("musteriler")
+        val refSiraKayit = database.getReference("ilk_kayit")
+        val sorgu = refSiraKayit.orderByChild("gmail").equalTo("${email}")
 
         tasarim.buttonOnayla.setOnClickListener {
             sorgu.addValueEventListener(object : ValueEventListener{
                 override fun onDataChange(snapshot: DataSnapshot) {
 
                     for (s in snapshot.children) {
-                        val musteri = s.getValue(Musteriler::class.java)
+                        val musteri = s.getValue(MusteriKayit::class.java)
                         val tc = tasarim.editTextTcKimlik.text.toString()
                         val giseNumarasi = editTextGiseNumarasi.text.toString()
                         val siraNumarasi = editTextSiraNo.text.toString()
                         if (s != null ) {
-                            val keyy = s.key
-                            if (musteri?.tc_no.toString() == tc && giseNumarasi.toString()==musteri?.gise_no.toString()) {
+                            val key = s.key
+                                if (musteri?.tc_no.toString() == tc) {
                                 tasarim.textViewAdSoyad.text = "Adınız Soyadınız : ${musteri?.ad_soyad.toString()}"
                                 tasarim.textViewTcKimlik.text = "TC Kimlik Numaranız : ${musteri?.tc_no.toString()}"
                                 tasarim.textViewGmail.text = "Gmail Adresiniz : ${musteri?.gmail.toString()}"
                                 tasarim.textViewGiseNo.text = "Gişe Numaranız : ${musteri?.gise_no.toString()}"
                                 tasarim.textViewSiraNo.text = "Sıra Numaranız : ${musteri?.sira_no.toString()}"
 
-                                val gise = tasarim.editTextGiseNumarasi.text.toString().trim()
-                                val sorgu2 = refMusteriler.orderByChild("gise_no").equalTo("${gise}")
-
-                                sorgu2.addValueEventListener(object : ValueEventListener {
-                                    override fun onDataChange(snapshot: DataSnapshot) {
-                                        for (postSnapshot in snapshot.children ) {
-                                            val musterii = postSnapshot.getValue(Musteriler::class.java)
-                                            if (postSnapshot != null) {
-                                                val key = postSnapshot.key
-                                                Log.e("key",key.toString())
-                                                    tasarim.textViewMevcutSiraNo.text = "İşlem Yapan Kişinin Sıra Numarası : ${musterii?.sira_no.toString()} "
-                                                    hesapla(musteri?.sira_no.toString().toInt(),musterii?.sira_no.toString().toInt())
+                                    val refMusteriler = database.getReference("musteriler")
+                                    val sorgu2 = refMusteriler.orderByChild("gise_no").equalTo("${giseNumarasi}")
+                                    sorgu2.addValueEventListener(object : ValueEventListener {
+                                        override fun onDataChange(snapshot: DataSnapshot) {
+                                            for (g in snapshot.children) {
+                                                val musterii = g.getValue(Musteriler::class.java)
+                                                tasarim.textViewMevcutSiraNo.text = "Şu an ki müşterinin numarası : ${musterii?.sira_no.toString()}"
+                                                hesapla(musteri?.sira_no!!.toInt(),musterii?.sira_no!!.toInt())
                                             }
+
+                                        }
+
+                                        override fun onCancelled(error: DatabaseError) {
 
 
                                         }
 
-                                    }
-
-                                    override fun onCancelled(error: DatabaseError) {
-
-
-                                    }
-
-                                })
+                                    })
                             }
 
                         }
@@ -94,6 +87,8 @@ class UserInterfaceFragment : Fragment() {
                 }
 
             })
+
+
         }
 
 
@@ -105,7 +100,7 @@ class UserInterfaceFragment : Fragment() {
 
         if (siraNumaran>mevcutSira) {
             var kalan = siraNumaran - mevcutSira
-            textViewKalanKisi.text = kalan.toString()
+            textViewKalanKisi.text = "Kalan Kişi Sayısı : ${kalan.toString()}"
         } else if (siraNumaran < mevcutSira) {
             textViewKalanKisi.text = "Sıra Numaranız Geçmiştir, İlgili Birimle İletişime Geçiniz"
         }

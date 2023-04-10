@@ -29,33 +29,34 @@ class AnaSiraOlusturmaFragment : Fragment() {
 
             val ad_soyad = tasarim.siraAlmaAdSoyad.text.toString().trim()
             val tc_no = tasarim.siraAlmaKimlikNumarasi.text.toString().trim()
+            val gmail = tasarim.siraAlmaGmail.text.toString().trim()
 
             if (gise1<20 && gise1 == gise2 && gise1 == gise3 ) {
                 gise1++
-                tasarim.textViewBilgilendirme.text = "AD SOYAD : ${ad_soyad} \n \n TC KİMLİK NUMARASI : ${tc_no} \n \n GİŞE NUMARANIZ : Gişe1 \n \n SIRA NUMARANIZ : ${gise1}"
+                tasarim.textViewBilgilendirme.text = "AD SOYAD : ${ad_soyad} \n \n TC KİMLİK NUMARASI : ${tc_no} \n \n GMAİL ADRESİNİZ : ${gmail} \n \n GİŞE NUMARANIZ : Gişe1 \n \n SIRA NUMARANIZ : ${gise1}"
                 val refMusteriler = database.getReference("ilk_kayit")
                 val giseNo = "Gişe 1"
                 val siraNo = gise1
-                val musteri = MusteriKayit(ad_soyad,tc_no.toLong(),giseNo,siraNo)
+                val musteri = MusteriKayit(ad_soyad,tc_no.toLong(),giseNo,siraNo,gmail)
                 refMusteriler.push().setValue(musteri)
 
             }
             else if (gise2<20 && gise1>gise2 && gise2 == gise3) {
                 gise2++
-                tasarim.textViewBilgilendirme.text = "AD SOYAD : ${ad_soyad} \n \n TC KİMLİK NUMARASI : ${tc_no} \n \n GİŞE NUMARANIZ : Gişe2 \n \n SIRA NUMARANIZ : ${gise2}"
+                tasarim.textViewBilgilendirme.text = "AD SOYAD : ${ad_soyad} \n \n TC KİMLİK NUMARASI : ${tc_no} \n \n GMAİL ADRESİNİZ : ${gmail} \n \n GİŞE NUMARANIZ : Gişe2 \n \n SIRA NUMARANIZ : ${gise2}"
                 val refMusteriler = database.getReference("ilk_kayit")
                 val giseNo = "Gişe 2"
                 val siraNo = gise2
-                val musteri = MusteriKayit(ad_soyad,tc_no.toLong(),giseNo,siraNo)
+                val musteri = MusteriKayit(ad_soyad,tc_no.toLong(),giseNo,siraNo,gmail)
                 refMusteriler.push().setValue(musteri)
             }
             else if (gise3<20 && gise1>gise3 && gise2>gise3) {
                 gise3++
-                tasarim.textViewBilgilendirme.text = "AD SOYAD : ${ad_soyad} \n \n TC KİMLİK NUMARASI : ${tc_no} \n \n GİŞE NUMARANIZ : Gişe3 \n \n SIRA NUMARANIZ : ${gise3}"
+                tasarim.textViewBilgilendirme.text = "AD SOYAD : ${ad_soyad} \n \n TC KİMLİK NUMARASI : ${tc_no} \n \n GMAİL ADRESİNİZ : ${gmail} \n \n GİŞE NUMARANIZ : Gişe3 \n \n SIRA NUMARANIZ : ${gise3}"
                 val refMusteriler = database.getReference("ilk_kayit")
                 val giseNo = "Gişe 3"
                 val siraNo = gise3
-                val musteri = MusteriKayit(ad_soyad,tc_no.toLong(),giseNo,siraNo)
+                val musteri = MusteriKayit(ad_soyad,tc_no.toLong(),giseNo,siraNo,gmail)
                 refMusteriler.push().setValue(musteri)
             }
             else if (gise1>=20 && gise2>=20 && gise3>=20) {

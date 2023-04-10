@@ -14,9 +14,6 @@
         android:theme="@style/Theme.BankProject"
         tools:targetApi="31">
         <activity
-            android:name=".denemeActivity"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

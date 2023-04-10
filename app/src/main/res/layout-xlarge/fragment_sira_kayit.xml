@@ -23,10 +23,11 @@
 
             <ImageButton
                 android:id="@+id/exitButtonYonetici"
-                android:layout_width="31dp"
-                android:layout_height="29dp"
+                android:layout_width="75dp"
+                android:layout_height="65dp"
                 android:layout_marginEnd="5dp"
                 android:background="#00ACC1"
+                android:scaleType="fitCenter"
                 android:src="@drawable/exit"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -39,7 +40,7 @@
                 android:layout_marginStart="20dp"
                 android:text="YÖNETİCİ PORTALI"
                 android:textColor="#FFB300"
-                android:textSize="34sp"
+                android:textSize="60sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/exitButtonYonetici"
@@ -55,18 +56,18 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="150dp"
         android:layout_marginEnd="10dp"
+        android:layout_marginBottom="60dp"
+        app:layout_constraintBottom_toTopOf="@+id/textInputLayout8"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frameLayout2">
+        app:layout_constraintStart_toStartOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/yoneticiKullaniciAd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Müşterinin Adı Soyadı :"
-            android:textSize="16sp"
+            android:textSize="50sp"
             android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -75,18 +76,18 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="30dp"
         android:layout_marginEnd="10dp"
+        android:layout_marginBottom="60dp"
+        app:layout_constraintBottom_toTopOf="@+id/textInputLayout9"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout7">
+        app:layout_constraintStart_toStartOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/yoneticiMusteriGmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Müşteri Gmail :"
-            android:textSize="16sp"
+            android:textSize="50sp"
             android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -95,18 +96,18 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="30dp"
         android:layout_marginEnd="10dp"
+        android:layout_marginBottom="60dp"
+        app:layout_constraintBottom_toTopOf="@+id/textInputLayout10"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout8">
+        app:layout_constraintStart_toStartOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/yoneticiMusteriKimlikNumarasi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Müşteri Kimlik Numarası :"
-            android:textSize="16sp"
+            android:textSize="50sp"
             android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -115,13 +116,11 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="40dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="60dp"
         app:layout_constraintBottom_toTopOf="@+id/textInputLayout14"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout9">
+        app:layout_constraintStart_toStartOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/yoneticiMusteriGiseNo"
@@ -129,7 +128,7 @@
             android:layout_height="wrap_content"
             android:hint="Müşterinin Gişe Numarası :"
             android:inputType="number"
-            android:textSize="16sp"
+            android:textSize="50sp"
             android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -138,28 +137,29 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="30dp"
         android:layout_marginEnd="10dp"
+        android:layout_marginBottom="60dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonYoneticiKaydet"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout10">
+        app:layout_constraintStart_toStartOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/yoneticiMusteriSiraNo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Müşterinin Sıra Numarası :"
-            android:textSize="16sp"
+            android:textSize="50sp"
             android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/buttonYoneticiKaydet"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="145dp"
         android:layout_marginBottom="5dp"
         android:backgroundTint="#43A047"
         android:text="VERİLERİ KAYDET"
+        android:textSize="48sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -171,16 +171,17 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="8dp"
-        android:textSize="16sp"
+        android:textSize="48sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frameLayout2" />
 
     <Button
         android:id="@+id/buttonVerileriAl"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="8dp"
         android:text="VERİLERİ AL"
+        android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@+id/textInputLayout7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

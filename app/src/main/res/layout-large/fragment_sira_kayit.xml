@@ -55,7 +55,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="180dp"
         android:layout_marginEnd="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -66,7 +66,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Müşterinin Adı Soyadı :"
-            android:textSize="16sp"
+            android:textSize="22sp"
             android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -75,7 +75,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="35dp"
         android:layout_marginEnd="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -86,7 +86,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Müşteri Gmail :"
-            android:textSize="16sp"
+            android:textSize="22sp"
             android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -95,7 +95,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="35dp"
         android:layout_marginEnd="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -106,7 +106,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Müşteri Kimlik Numarası :"
-            android:textSize="16sp"
+            android:textSize="22sp"
             android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -115,7 +115,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="40dp"
         app:layout_constraintBottom_toTopOf="@+id/textInputLayout14"
@@ -129,7 +129,7 @@
             android:layout_height="wrap_content"
             android:hint="Müşterinin Gişe Numarası :"
             android:inputType="number"
-            android:textSize="16sp"
+            android:textSize="22sp"
             android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -149,7 +149,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Müşterinin Sıra Numarası :"
-            android:textSize="16sp"
+            android:textSize="22sp"
             android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -160,6 +160,7 @@
         android:layout_marginBottom="5dp"
         android:backgroundTint="#43A047"
         android:text="VERİLERİ KAYDET"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -169,7 +170,7 @@
         android:id="@+id/textViewGelenMusteriBilgi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="5dp"
         android:layout_marginTop="8dp"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -179,8 +180,9 @@
         android:id="@+id/buttonVerileriAl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="8dp"
         android:text="VERİLERİ AL"
+        android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/textInputLayout7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

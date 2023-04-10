@@ -12,8 +12,8 @@
         android:id="@+id/textViewSiraNo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="20dp"
         android:text="SIRA NUMARANIZ :"
         android:textColor="#FF0B0A0A"
         android:textSize="20sp"
@@ -23,7 +23,7 @@
 
     <FrameLayout
         android:id="@+id/frameLayout"
-        android:layout_width="409dp"
+        android:layout_width="0dp"
         android:layout_height="42dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -51,10 +51,10 @@
 
             <ImageButton
                 android:id="@+id/exitButton"
-                android:layout_width="31dp"
-                android:layout_height="29dp"
-                android:layout_marginEnd="5dp"
-                android:background="#FFFFFF"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginEnd="8dp"
+                android:background="#FDD835"
                 android:src="@drawable/exit"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -79,6 +79,7 @@
             android:layout_height="wrap_content"
             android:hint="TC Kimlik Numaranızı Giriniz :"
             android:textColor="#0B0B0B"
+            android:textSize="20sp"
             android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -98,6 +99,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Banka Gişe Numarasını Giriniz :"
+            android:textSize="20sp"
             android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -117,6 +119,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Banka Sıra Numaranızı Giriniz :"
+            android:textSize="20sp"
             android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -124,8 +127,8 @@
         android:id="@+id/textViewAdSoyad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="30dp"
         android:text="AD SOYAD :"
         android:textColor="#101010"
         android:textSize="20sp"
@@ -137,8 +140,8 @@
         android:id="@+id/textViewGmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="20dp"
         android:text="GMAİL :"
         android:textColor="#0B0A0A"
         android:textSize="20sp"
@@ -150,8 +153,8 @@
         android:id="@+id/textViewTcKimlik"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="20dp"
         android:text="KİMLİK NO :"
         android:textColor="#FF0B0A0A"
         android:textSize="20sp"
@@ -163,8 +166,8 @@
         android:id="@+id/textViewGiseNo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="20dp"
         android:text="GİŞE NO :"
         android:textColor="#FF0B0A0A"
         android:textSize="20sp"
@@ -176,8 +179,8 @@
         android:id="@+id/textViewMevcutSiraNo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="20dp"
         android:text="MEVCUT SIRA NO :"
         android:textColor="#FF0B0A0A"
         android:textSize="20sp"
@@ -189,8 +192,8 @@
         android:id="@+id/textViewKalanKisi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="20dp"
         android:text="KALAN KİŞİ :"
         android:textColor="#FF0B0A0A"
         android:textSize="20sp"
@@ -205,7 +208,7 @@
         android:layout_marginTop="5dp"
         android:backgroundTint="#039BE5"
         android:text="ONAYLA"
-        android:textSize="20sp"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"

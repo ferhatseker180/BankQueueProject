@@ -4,107 +4,115 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".YoneticiGirisFragment">
+    android:background="#F9A825"
+    tools:context=".UserCreateFragment">
 
-    <TextView
-        android:id="@+id/forgotPasswordYonetici"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="10dp"
-        android:text="Forgot Password?"
-        android:textColor="#0B0A0A"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout13" />
+    <!-- TODO: Update blank fragment layout -->
 
-    <pl.droidsonroids.gif.GifImageView
-        android:id="@+id/gifImageView2"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout6"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="20dp"
-        android:scaleType="fitCenter"
-        android:src="@drawable/welcome2"
-        app:layout_constraintBottom_toTopOf="@+id/textInputLayout11"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/textInputLayout4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextEmailOlusturma"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email Adresini Giriniz :"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/textInputLayout5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextSifreOlusturma"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Şifre Belirleyiniz :"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonOlustur"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextSifreCheck"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Şifrenizi Tekrar Giriniz :"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout18"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/textInputLayout6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextAdSoyadOlustur"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ad Soyad Giriniz :"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/imageViewOlustur"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="40dp"
+        android:src="@drawable/create"
+        app:layout_constraintBottom_toTopOf="@+id/textInputLayout18"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout11"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="40dp"
-        app:layout_constraintBottom_toTopOf="@+id/textInputLayout12"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/yoneticiEmailGiris"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Yönetici Email Adresini Giriniz :"
-            android:textColor="#0B0B0B"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout12"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="40dp"
-        app:layout_constraintBottom_toTopOf="@+id/textInputLayout13"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/yoneticiGirisPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Yönetici Şifresini Giriniz :"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout13"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="40dp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonYoneticiGiris"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/yoneticiKodText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Yönetici Kodunu Giriniz :"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-    </com.google.android.material.textfield.TextInputLayout>
-
     <Button
-        android:id="@+id/buttonYoneticiGiris"
+        android:id="@+id/buttonOlustur"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
-        android:text="GİRİŞ YAP"
+        android:layout_marginBottom="20dp"
+        android:text="KULLANICI OLUŞTUR"
         android:textSize="20sp"
-        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

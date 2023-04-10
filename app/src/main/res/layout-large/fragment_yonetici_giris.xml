@@ -14,7 +14,7 @@
         android:layout_marginEnd="10dp"
         android:text="Forgot Password?"
         android:textColor="#0B0A0A"
-        android:textSize="16sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout13" />
@@ -49,7 +49,7 @@
             android:layout_height="wrap_content"
             android:hint="Yönetici Email Adresini Giriniz :"
             android:textColor="#0B0B0B"
-            android:textSize="20sp"
+            android:textSize="24sp"
             android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -69,7 +69,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Yönetici Şifresini Giriniz :"
-            android:textSize="20sp"
+            android:textSize="24sp"
             android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -89,7 +89,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Yönetici Kodunu Giriniz :"
-            android:textSize="20sp"
+            android:textSize="24sp"
             android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -97,9 +97,9 @@
         android:id="@+id/buttonYoneticiGiris"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="8dp"
         android:text="GİRİŞ YAP"
-        android:textSize="20sp"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

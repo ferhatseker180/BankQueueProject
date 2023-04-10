@@ -13,18 +13,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginBottom="80dp"
         android:text="SIRA NUMARANIZ :"
         android:textColor="#FF0B0A0A"
-        android:textSize="20sp"
+        android:textSize="50sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewGiseNo" />
+        app:layout_constraintBottom_toTopOf="@+id/textViewMevcutSiraNo"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <FrameLayout
         android:id="@+id/frameLayout"
-        android:layout_width="409dp"
-        android:layout_height="42dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,7 +41,7 @@
                 android:layout_height="wrap_content"
                 android:text="KULLANICI PORTALI"
                 android:textColor="#E53935"
-                android:textSize="34sp"
+                android:textSize="60sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/exitButton"
@@ -51,10 +51,11 @@
 
             <ImageButton
                 android:id="@+id/exitButton"
-                android:layout_width="31dp"
-                android:layout_height="29dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_marginEnd="5dp"
-                android:background="#FFFFFF"
+                android:background="#FDD835"
+                android:scaleType="fitCenter"
                 android:src="@drawable/exit"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -79,6 +80,7 @@
             android:layout_height="wrap_content"
             android:hint="TC Kimlik Numaranızı Giriniz :"
             android:textColor="#0B0B0B"
+            android:textSize="50sp"
             android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -98,6 +100,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Banka Gişe Numarasını Giriniz :"
+            android:textSize="50sp"
             android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -117,6 +120,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Banka Sıra Numaranızı Giriniz :"
+            android:textSize="50sp"
             android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -125,87 +129,87 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginBottom="80dp"
         android:text="AD SOYAD :"
         android:textColor="#101010"
-        android:textSize="20sp"
+        android:textSize="50sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonOnayla" />
+        app:layout_constraintBottom_toTopOf="@+id/textViewGmail"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textViewGmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginBottom="80dp"
         android:text="GMAİL :"
         android:textColor="#0B0A0A"
-        android:textSize="20sp"
+        android:textSize="50sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewAdSoyad" />
+        app:layout_constraintBottom_toTopOf="@+id/textViewTcKimlik"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textViewTcKimlik"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginBottom="80dp"
         android:text="KİMLİK NO :"
         android:textColor="#FF0B0A0A"
-        android:textSize="20sp"
+        android:textSize="50sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewGmail" />
+        app:layout_constraintBottom_toTopOf="@+id/textViewGiseNo"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textViewGiseNo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginBottom="80dp"
         android:text="GİŞE NO :"
         android:textColor="#FF0B0A0A"
-        android:textSize="20sp"
+        android:textSize="50sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewTcKimlik" />
+        app:layout_constraintBottom_toTopOf="@+id/textViewSiraNo"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textViewMevcutSiraNo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginBottom="80dp"
         android:text="MEVCUT SIRA NO :"
         android:textColor="#FF0B0A0A"
-        android:textSize="20sp"
+        android:textSize="50sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewSiraNo" />
+        app:layout_constraintBottom_toTopOf="@+id/textViewKalanKisi"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textViewKalanKisi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginBottom="50dp"
         android:text="KALAN KİŞİ :"
         android:textColor="#FF0B0A0A"
-        android:textSize="20sp"
+        android:textSize="50sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewMevcutSiraNo" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/buttonOnayla"
-        android:layout_width="167dp"
-        android:layout_height="62dp"
-        android:layout_marginTop="5dp"
+        android:layout_width="290dp"
+        android:layout_height="92dp"
+        android:layout_marginTop="10dp"
         android:backgroundTint="#039BE5"
         android:text="ONAYLA"
-        android:textSize="20sp"
+        android:textSize="48sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"

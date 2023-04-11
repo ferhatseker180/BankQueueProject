@@ -66,6 +66,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Müşterinin Adı Soyadı :"
+            android:textColor="@color/yaziRenk"
             android:textSize="16sp"
             android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -86,6 +87,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Müşteri Gmail :"
+            android:textColor="@color/yaziRenk"
             android:textSize="16sp"
             android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -106,6 +108,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Müşteri Kimlik Numarası :"
+            android:inputType="number"
+            android:textColor="@color/yaziRenk"
             android:textSize="16sp"
             android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -129,6 +133,7 @@
             android:layout_height="wrap_content"
             android:hint="Müşterinin Gişe Numarası :"
             android:inputType="number"
+            android:textColor="@color/yaziRenk"
             android:textSize="16sp"
             android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -149,6 +154,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Müşterinin Sıra Numarası :"
+            android:textColor="@color/yaziRenk"
             android:textSize="16sp"
             android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -170,7 +176,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="8dp"
+        android:textColor="@color/yaziRenk"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frameLayout2" />
@@ -180,6 +186,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"
+        android:backgroundTint="#E65100"
         android:text="VERİLERİ AL"
         app:layout_constraintBottom_toTopOf="@+id/textInputLayout7"
         app:layout_constraintEnd_toEndOf="parent"

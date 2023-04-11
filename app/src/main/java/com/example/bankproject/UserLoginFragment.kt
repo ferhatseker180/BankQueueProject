@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.Navigation
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuthException
+import com.google.firebase.auth.FirebaseUser
 import kotlinx.android.synthetic.main.fragment_user_login.view.*
 
 
@@ -15,7 +17,6 @@ class UserLoginFragment : Fragment() {
     private lateinit var auth: FirebaseAuth
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val tasarim = inflater.inflate(R.layout.fragment_user_login, container, false)
-
         auth = FirebaseAuth.getInstance()
         val guncelKullanici = auth.currentUser
 
@@ -27,7 +28,7 @@ class UserLoginFragment : Fragment() {
                 auth.signInWithEmailAndPassword(kullaniciEmail,kullaniciPassword).addOnCompleteListener { task ->
                     if (task.isSuccessful) {
                         Navigation.findNavController(it).navigate(R.id.action_userLoginFragment_to_userInterfaceFragment)
-                        Toast.makeText(activity, "Hoşgeldiniz : ${guncelKullanici}", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(activity, "Hoşgeldiniz...", Toast.LENGTH_SHORT).show()
                     }
                 }.addOnFailureListener { exception ->
                     Toast.makeText(activity,exception.localizedMessage, Toast.LENGTH_LONG).show()

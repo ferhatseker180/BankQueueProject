@@ -13,7 +13,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="10dp"
         android:text="Forgot Password?"
-        android:textColor="#0B0A0A"
+        android:textColor="@color/yaziRenk"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,7 +24,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="20dp"
-        android:scaleType="fitCenter"
+        android:scaleType="fitXY"
         android:src="@drawable/welcome2"
         app:layout_constraintBottom_toTopOf="@+id/textInputLayout11"
         app:layout_constraintEnd_toEndOf="parent"
@@ -48,7 +48,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Yönetici Email Adresini Giriniz :"
-            android:textColor="#0B0B0B"
+            android:textColor="@color/yaziRenk"
             android:textSize="20sp"
             android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -69,6 +69,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Yönetici Şifresini Giriniz :"
+            android:textColor="@color/yaziRenk"
             android:textSize="20sp"
             android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -89,6 +90,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Yönetici Kodunu Giriniz :"
+            android:textColor="@color/yaziRenk"
             android:textSize="20sp"
             android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>

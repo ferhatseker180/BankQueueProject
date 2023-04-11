@@ -33,12 +33,7 @@ class SplashFragment : Fragment() {
        }
 
         tasarim.buttonYoneticiAnaGiris.setOnClickListener {
-            if (guncelKullanici != null) {
-                Navigation.findNavController(it).navigate(R.id.action_splashFragment_to_siraKayitFragment)
-            }
-            else {
                 Navigation.findNavController(it).navigate(R.id.action_splashFragment_to_yoneticiGirisFragment)
-            }
         }
 
 

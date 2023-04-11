@@ -33,7 +33,7 @@ class AnaSiraOlusturmaFragment : Fragment() {
 
             if (gise1<20 && gise1 == gise2 && gise1 == gise3 ) {
                 gise1++
-                tasarim.textViewBilgilendirme.text = "AD SOYAD : ${ad_soyad} \n \n TC KİMLİK NUMARASI : ${tc_no} \n \n GMAİL ADRESİNİZ : ${gmail} \n \n GİŞE NUMARANIZ : Gişe1 \n \n SIRA NUMARANIZ : ${gise1}"
+                tasarim.textViewBilgilendirme.text = "AD SOYAD : \n ${ad_soyad} \n \n TC KİMLİK NUMARASI : \n ${tc_no} \n \n GMAİL ADRESİNİZ : \n ${gmail} \n \n GİŞE NUMARANIZ : \n Gişe1 \n \n SIRA NUMARANIZ :  ${gise1}"
                 val refMusteriler = database.getReference("ilk_kayit")
                 val giseNo = "Gişe 1"
                 val siraNo = gise1
@@ -43,7 +43,7 @@ class AnaSiraOlusturmaFragment : Fragment() {
             }
             else if (gise2<20 && gise1>gise2 && gise2 == gise3) {
                 gise2++
-                tasarim.textViewBilgilendirme.text = "AD SOYAD : ${ad_soyad} \n \n TC KİMLİK NUMARASI : ${tc_no} \n \n GMAİL ADRESİNİZ : ${gmail} \n \n GİŞE NUMARANIZ : Gişe2 \n \n SIRA NUMARANIZ : ${gise2}"
+                tasarim.textViewBilgilendirme.text = "AD SOYAD : \n ${ad_soyad} \n \n TC KİMLİK NUMARASI : \n ${tc_no} \n \n GMAİL ADRESİNİZ : \n ${gmail} \n \n GİŞE NUMARANIZ : \n Gişe2 \n \n SIRA NUMARANIZ :  ${gise2}"
                 val refMusteriler = database.getReference("ilk_kayit")
                 val giseNo = "Gişe 2"
                 val siraNo = gise2
@@ -52,7 +52,7 @@ class AnaSiraOlusturmaFragment : Fragment() {
             }
             else if (gise3<20 && gise1>gise3 && gise2>gise3) {
                 gise3++
-                tasarim.textViewBilgilendirme.text = "AD SOYAD : ${ad_soyad} \n \n TC KİMLİK NUMARASI : ${tc_no} \n \n GMAİL ADRESİNİZ : ${gmail} \n \n GİŞE NUMARANIZ : Gişe3 \n \n SIRA NUMARANIZ : ${gise3}"
+                tasarim.textViewBilgilendirme.text = "AD SOYAD : \n ${ad_soyad} \n \n TC KİMLİK NUMARASI : \n ${tc_no} \n \n GMAİL ADRESİNİZ : \n ${gmail} \n \n GİŞE NUMARANIZ : \n Gişe3 \n \n SIRA NUMARANIZ :  ${gise3}"
                 val refMusteriler = database.getReference("ilk_kayit")
                 val giseNo = "Gişe 3"
                 val siraNo = gise3
@@ -60,7 +60,7 @@ class AnaSiraOlusturmaFragment : Fragment() {
                 refMusteriler.push().setValue(musteri)
             }
             else if (gise1>=20 && gise2>=20 && gise3>=20) {
-                Toast.makeText(activity,"Şu anda sıra numarası verme hizmeti veremiyoruz",Toast.LENGTH_LONG)
+                Toast.makeText(activity,"Şu Anda Teknik Nedenlerden Ötürü Sıra Veremiyoruz!",Toast.LENGTH_LONG)
             }
         }
 

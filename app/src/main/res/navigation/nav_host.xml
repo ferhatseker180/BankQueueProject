@@ -89,6 +89,8 @@
         tools:layout="@layout/fragment_ana_sira_olusturma" >
         <action
             android:id="@+id/action_anaSiraOlusturmaFragment_to_userLoginFragment"
-            app:destination="@id/userLoginFragment" />
+            app:destination="@id/userLoginFragment"
+            app:popUpTo="@id/anaSiraOlusturmaFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 </navigation>

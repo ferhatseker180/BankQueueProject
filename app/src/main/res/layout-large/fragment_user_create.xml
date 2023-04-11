@@ -25,6 +25,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Email Adresini Giriniz :"
+            android:textColor="@color/yaziRenk"
             android:textSize="24sp"
             android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -45,6 +46,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Şifre Belirleyiniz :"
+            android:textColor="@color/yaziRenk"
             android:textSize="24sp"
             android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -65,6 +67,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Şifrenizi Tekrar Giriniz :"
+            android:textColor="@color/yaziRenk"
             android:textSize="24sp"
             android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -86,6 +89,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Ad Soyad Giriniz :"
+            android:textColor="@color/yaziRenk"
             android:textSize="24sp"
             android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>

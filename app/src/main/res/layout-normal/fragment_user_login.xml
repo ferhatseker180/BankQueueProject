@@ -50,7 +50,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Email Giriniz :"
-            android:textColor="#131313"
+            android:textColor="@color/yaziRenk"
             android:textSize="20sp"
             android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -72,7 +72,7 @@
             android:layout_height="wrap_content"
             android:hint="Şifrenizi Giriniz :"
             android:inputType="textPassword"
-            android:textColor="#121212"
+            android:textColor="@color/yaziRenk"
             android:textSize="24sp"
             android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>

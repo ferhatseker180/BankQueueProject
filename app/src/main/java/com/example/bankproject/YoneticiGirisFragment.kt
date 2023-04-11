@@ -26,7 +26,8 @@ class YoneticiGirisFragment : Fragment() {
             val yoneticiPassword = tasarim.yoneticiGirisPassword.text.toString().trim()
             val yoneticiKodText = tasarim.yoneticiKodText.text.toString().trim()
             val yoneticiKod = "1234"
-                    auth.signInWithEmailAndPassword(yoneticimail,yoneticiPassword).addOnCompleteListener { task ->
+
+            auth.signInWithEmailAndPassword(yoneticimail,yoneticiPassword).addOnCompleteListener { task ->
                         if (task.isSuccessful && yoneticiKodText==yoneticiKod) {
                          //   val guncelYonetici = auth.currentUser?.email.toString()
                             Navigation.findNavController(it).navigate(R.id.action_yoneticiGirisFragment_to_siraKayitFragment)

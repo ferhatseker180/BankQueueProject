@@ -1,5 +1,6 @@
 package com.example.bankproject
 
+import android.animation.ObjectAnimator
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -51,7 +52,10 @@ class UserInterfaceFragment : Fragment() {
                         val siraNumarasi = editTextSiraNo.text.toString()
                         if (s != null ) {
                             val key = s.key
+
                                 if (musteri?.tc_no.toString() == tc) {
+                                    alpha()
+                                    translation()
                                 tasarim.textViewAdSoyad.text = "Adınız Soyadınız : ${musteri?.ad_soyad.toString()}"
                                 tasarim.textViewTcKimlik.text = "TC Kimlik Numaranız : ${musteri?.tc_no.toString()}"
                                 tasarim.textViewGmail.text = "Gmail Adresiniz : ${musteri?.gmail.toString()}"
@@ -108,5 +112,66 @@ class UserInterfaceFragment : Fragment() {
             textViewKalanKisi.text = "Şu An Sizin Sıranız..."
         }
 
+    }
+
+    fun alpha() {
+        val alphaAnimator = ObjectAnimator.ofFloat(textViewAdSoyad,"alpha",0.0f,1.0f).apply {
+            duration = 3000
+        }
+        val a = ObjectAnimator.ofFloat(textViewGmail,"alpha",0.0f,1.0f).apply {
+            duration = 3000
+        }
+        val b = ObjectAnimator.ofFloat(textViewTcKimlik,"alpha",0.0f,1.0f).apply {
+            duration = 3000
+        }
+        val c = ObjectAnimator.ofFloat(textViewGiseNo,"alpha",0.0f,1.0f).apply {
+            duration = 3000
+        }
+        val d = ObjectAnimator.ofFloat(textViewSiraNo,"alpha",0.0f,1.0f).apply {
+            duration = 3000
+        }
+        val e = ObjectAnimator.ofFloat(textViewMevcutSiraNo,"alpha",0.0f,1.0f).apply {
+            duration = 3000
+        }
+        val f = ObjectAnimator.ofFloat(textViewKalanKisi,"alpha",0.0f,1.0f).apply {
+            duration = 3000
+        }
+        f.start()
+        e.start()
+        d.start()
+        c.start()
+        b.start()
+        a.start()
+        alphaAnimator.start()
+    }
+    fun translation() {
+        val translationAnimator = ObjectAnimator.ofFloat(textViewAdSoyad,"translationX",0.0f,10.0f).apply {
+            duration = 3000
+        }
+        val a = ObjectAnimator.ofFloat(textViewGmail,"translationX",0.0f,10.0f).apply {
+            duration = 3000
+        }
+        val b = ObjectAnimator.ofFloat(textViewTcKimlik,"translationX",0.0f,10.0f).apply {
+            duration = 3000
+        }
+        val c = ObjectAnimator.ofFloat(textViewGiseNo,"translationX",0.0f,10.0f).apply {
+            duration = 3000
+        }
+        val d = ObjectAnimator.ofFloat(textViewSiraNo,"translationX",0.0f,10.0f).apply {
+            duration = 3000
+        }
+        val e = ObjectAnimator.ofFloat(textViewMevcutSiraNo,"translationX",0.0f,10.0f).apply {
+            duration = 3000
+        }
+        val f = ObjectAnimator.ofFloat(textViewKalanKisi,"translationX",0.0f,10.0f).apply {
+            duration = 3000
+        }
+        f.start()
+        e.start()
+        d.start()
+        c.start()
+        b.start()
+        a.start()
+        translationAnimator.start()
     }
 }

@@ -1,5 +1,6 @@
 package com.example.bankproject
 
+import android.animation.ObjectAnimator
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.Navigation
 import com.google.firebase.auth.FirebaseAuth
+import kotlinx.android.synthetic.main.fragment_user_create.*
 import kotlinx.android.synthetic.main.fragment_user_create.view.*
 
 class UserCreateFragment : Fragment() {

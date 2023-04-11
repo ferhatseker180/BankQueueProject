@@ -69,6 +69,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Yönetici Şifresini Giriniz :"
+            android:inputType="textPassword"
             android:textColor="@color/yaziRenk"
             android:textSize="24sp"
             android:textStyle="bold" />
@@ -90,6 +91,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Yönetici Kodunu Giriniz :"
+            android:inputType="textPassword"
             android:textColor="@color/yaziRenk"
             android:textSize="24sp"
             android:textStyle="bold" />

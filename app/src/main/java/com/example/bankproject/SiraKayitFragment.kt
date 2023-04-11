@@ -1,5 +1,6 @@
 package com.example.bankproject
 
+import android.animation.ObjectAnimator
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -57,6 +58,7 @@ class SiraKayitFragment : Fragment() {
                         val musteriler = kayit.getValue(MusteriKayit::class.java)
                         if (kayit!= null) {
                             val key = kayit.key
+                            alpha()
                             tasarim.textViewGelenMusteriBilgi.text = "Müşterinin Adı Soyadı : ${musteriler?.ad_soyad} \n Gmail Adresi : ${musteriler?.gmail} \n TC Kimlik Numarası : ${musteriler?.tc_no} \n Gişe Numarası : ${musteriler?.gise_no} \n Sıra Numarası : ${musteriler?.sira_no}"
 
 
@@ -72,9 +74,14 @@ class SiraKayitFragment : Fragment() {
             })
         }
 
-
-
         return tasarim
+    }
+
+    fun alpha() {
+        val alphaAnimation = ObjectAnimator.ofFloat(textViewGelenMusteriBilgi,"alpha",0.0f,1.0f).apply {
+            duration = 3000
+        }
+        alphaAnimation.start()
     }
 
 

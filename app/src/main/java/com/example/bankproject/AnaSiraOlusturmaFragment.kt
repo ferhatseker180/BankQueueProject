@@ -1,5 +1,6 @@
 package com.example.bankproject
 
+import android.animation.ObjectAnimator
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -33,6 +34,7 @@ class AnaSiraOlusturmaFragment : Fragment() {
 
             if (gise1<20 && gise1 == gise2 && gise1 == gise3 ) {
                 gise1++
+                alpha()
                 tasarim.textViewBilgilendirme.text = "AD SOYAD : \n ${ad_soyad} \n \n TC KİMLİK NUMARASI : \n ${tc_no} \n \n GMAİL ADRESİNİZ : \n ${gmail} \n \n GİŞE NUMARANIZ : \n Gişe1 \n \n SIRA NUMARANIZ :  ${gise1}"
                 val refMusteriler = database.getReference("ilk_kayit")
                 val giseNo = "Gişe 1"
@@ -43,6 +45,7 @@ class AnaSiraOlusturmaFragment : Fragment() {
             }
             else if (gise2<20 && gise1>gise2 && gise2 == gise3) {
                 gise2++
+                alpha()
                 tasarim.textViewBilgilendirme.text = "AD SOYAD : \n ${ad_soyad} \n \n TC KİMLİK NUMARASI : \n ${tc_no} \n \n GMAİL ADRESİNİZ : \n ${gmail} \n \n GİŞE NUMARANIZ : \n Gişe2 \n \n SIRA NUMARANIZ :  ${gise2}"
                 val refMusteriler = database.getReference("ilk_kayit")
                 val giseNo = "Gişe 2"
@@ -52,6 +55,7 @@ class AnaSiraOlusturmaFragment : Fragment() {
             }
             else if (gise3<20 && gise1>gise3 && gise2>gise3) {
                 gise3++
+                alpha()
                 tasarim.textViewBilgilendirme.text = "AD SOYAD : \n ${ad_soyad} \n \n TC KİMLİK NUMARASI : \n ${tc_no} \n \n GMAİL ADRESİNİZ : \n ${gmail} \n \n GİŞE NUMARANIZ : \n Gişe3 \n \n SIRA NUMARANIZ :  ${gise3}"
                 val refMusteriler = database.getReference("ilk_kayit")
                 val giseNo = "Gişe 3"
@@ -71,5 +75,11 @@ class AnaSiraOlusturmaFragment : Fragment() {
         return tasarim
     }
 
+    fun alpha() {
+      val alphaAnimation =  ObjectAnimator.ofFloat(textViewBilgilendirme,"alpha",0.0f,1.0f).apply {
+            duration = 3000
+        }
+        alphaAnimation.start()
+    }
 
 }

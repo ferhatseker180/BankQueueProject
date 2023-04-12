@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.navigation.Navigation
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
@@ -45,6 +46,7 @@ class SiraKayitFragment : Fragment() {
             val refMusteriler = database.getReference("musteriler")
             val musteri3 = Musteriler(ad_soyad,gmail,tc_no, gise_no,sira_no)
             refMusteriler.push().setValue(musteri3)
+           Toast.makeText(activity,"İşlem Başarılı",Toast.LENGTH_SHORT).show()
 
         }
 

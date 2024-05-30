@@ -52,7 +52,6 @@ class UserInterfaceFragment : Fragment() {
                         val siraNumarasi = editTextSiraNo.text.toString()
                         if (s != null ) {
                             val key = s.key
-
                                 if (musteri?.tc_no.toString() == tc) {
                                     alpha()
                                     translation()
